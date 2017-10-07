@@ -16,7 +16,7 @@ import {
     isEmpty
 } from 'react-redux-firebase';
 
-import { LIST_PATH, ACCOUNT_PATH, LOGIN_PATH, SIGNUP_PATH } from '../../constants';
+import { LIST_PATH, ACCOUNT_PATH, LOGIN_PATH, SIGNUP_PATH, PROFILE_PATH } from '../../constants';
 import defaultUserImage from '../../static/User.png';
 import classes from './Navbar.scss';
 
@@ -89,7 +89,7 @@ export default class Navbar extends Component {
                     />
                 </Link>
             </div>
-        )
+        );
         const rightMenu = authExists ? (
             <IconMenu
                 iconButtonElement={iconButton}
@@ -100,6 +100,10 @@ export default class Navbar extends Component {
                 <MenuItem
                     primaryText='Account'
                     onTouchTap={() => this.context.router.push(ACCOUNT_PATH)}
+                />
+                <MenuItem
+                    primaryText='Profile'
+                    onTouchTap={() => this.context.router.push(PROFILE_PATH)}
                 />
                 <MenuItem
                     primaryText='Sign out'
